@@ -1,0 +1,23 @@
+<h1 class="display-4">Sedes</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre Fiscal</th>
+            <th scope="col">Ubicacion</th>
+            <th scope="col">Hora de abrir</th>
+            <th scope="col">Hora de cierre</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sede of sedes">
+            <th scope="row">{{sede.id}}</th>
+            <td>{{sede.nombre_fiscal}}</td>
+            <td>{{sede.ubicacion}}</td>
+            <td>{{sede.hora_apertura}}</td>
+            <td>{{sede.hora_cierre}}</td>
+            <td><button class="btn btn-primary"  routerLink="/sede/{{sede.id}}">Ver Salas</button></td>
+        </tr>
+    </tbody>
+</table>
