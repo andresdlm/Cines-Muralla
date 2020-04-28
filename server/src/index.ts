@@ -6,6 +6,8 @@ import moviesRoutes from "./routes/moviesRoutes";
 import sedesRoutes from "./routes/sedesRoutes"
 import salasRoutes from "./routes/salasRoutes";
 import datosPeliculasRoutes from "./routes/datosPeliculasRoutes";
+import combosRoutes from "./routes/combosRoutes";
+import comidasRoutes from "./routes/comidasRoutes";
 
 class Server {
 
@@ -31,6 +33,8 @@ class Server {
         this.app.use('/api/sedes', sedesRoutes);
         this.app.use('/api/salas', salasRoutes);
         this.app.use('/api/datosPelicula', datosPeliculasRoutes);
+        this.app.use('/api/combo', combosRoutes);
+        this.app.use('/api/comida', comidasRoutes);
     }
 
     // Configura el puerto al que va a responder el servidor
