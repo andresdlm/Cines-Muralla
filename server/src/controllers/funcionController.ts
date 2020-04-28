@@ -4,13 +4,13 @@ import pool from '../database';
 class FuncionController {
 
     public async list (req: Request, res: Response) {
-        const funciones = await pool.query('SELECT peliculas.nombre_pelicula, salas.numero_sala, salas.tecnologia, salas.tipo_sala, sedes.nombre_fiscal, datos_peliculas.idioma, datos_peliculas.subtitulos, datos_peliculas.censura FROM funciones INNER JOIN datos_peliculas on funciones.id_datos_pelicula = datos_peliculas.id INNER JOIN salas on funciones.id_sala = salas.id INNER JOIN peliculas on datos_peliculas.id_pelicula = peliculas.id INNER JOIN sedes on salas.id_sede = sedes.id');
+        const funciones = await pool.query('SELECT peliculas.nombre_pelicula, salas.numero_sala, salas.tecnologia, salas.tipo_sala, sedes.nombre_fiscal, datos_peliculas.idioma, datos_peliculas.subtitulos, datos_peliculas.censura, funciones.id, funciones.id_datos_pelicula, funciones.id_sala FROM funciones INNER JOIN datos_peliculas on funciones.id_datos_pelicula = datos_peliculas.id INNER JOIN salas on funciones.id_sala = salas.id INNER JOIN peliculas on datos_peliculas.id_pelicula = peliculas.id INNER JOIN sedes on salas.id_sede = sedes.id');
         res.json(funciones);
     }
     
     public async getOne (req: Request, res: Response): Promise<any> {
         const { id } = req.params;
-        const funcion = await pool.query('SELECT peliculas.nombre_pelicula, salas.numero_sala, salas.tecnologia, salas.tipo_sala, sedes.nombre_fiscal, datos_peliculas.idioma, datos_peliculas.subtitulos, datos_peliculas.censura FROM funciones INNER JOIN datos_peliculas on funciones.id_datos_pelicula = datos_peliculas.id INNER JOIN salas on funciones.id_sala = salas.id INNER JOIN peliculas on datos_peliculas.id_pelicula = peliculas.id INNER JOIN sedes on salas.id_sede = sedes.id WHERE funciones.id = ?', [id])
+        const funcion = await pool.query('SELECT peliculas.nombre_pelicula, salas.numero_sala, salas.tecnologia, salas.tipo_sala, sedes.nombre_fiscal, datos_peliculas.idioma, datos_peliculas.subtitulos, datos_peliculas.censura, funciones.id, funciones.id_datos_pelicula, funciones.id_sala FROM funciones INNER JOIN datos_peliculas on funciones.id_datos_pelicula = datos_peliculas.id INNER JOIN salas on funciones.id_sala = salas.id INNER JOIN peliculas on datos_peliculas.id_pelicula = peliculas.id INNER JOIN sedes on salas.id_sede = sedes.id WHERE funciones.id = ?', [id])
         if (funcion.length > 0) {
             return res.json(funcion[0])
         }
