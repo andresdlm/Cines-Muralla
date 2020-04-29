@@ -16,12 +16,8 @@ export class SalasService {
     return this.http.get(`${this.API_URI}/salas`);
   }
 
-  getSala(id: String): Observable<Sala> {
-    return this.http.get(`${this.API_URI}/salas/${id}`);
-  }
-
   getSalaBySede(id: String): Observable<Sala> {
-    return this.http.get(`${this.API_URI}/salas/sede/${id}`);
+    return this.http.get(`${this.API_URI}/salas/${id}`);
   }
 
   saveSala(sala: Sala): Observable<Sala> {

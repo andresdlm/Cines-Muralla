@@ -1,0 +1,19 @@
+<h1 class="display-4">Configuraciones de Idioma</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Idioma</th>
+            <th scope="col">Subtitulos</th>
+            <th scope="col">Censura</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let datosPelicula of datosPeliculas">
+            <th scope="row">{{datosPelicula.id}}</th>
+            <td>{{datosPelicula.idioma}}</td>
+            <td>{{datosPelicula.subtitulos}}</td>
+            <td>{{datosPelicula.censura}}</td>
+        </tr>
+    </tbody>
+</table>

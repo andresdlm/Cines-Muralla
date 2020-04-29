@@ -19,11 +19,8 @@ class SalaController {
 
     public async getBySede (req: Request, res: Response): Promise<any> {
         const { id } = req.params;
-        const salas = await pool.query('SELECT salas.id, salas.id_sede, salas.tipo_sala, salas.tecnologia, sedes.nombre_fiscal FROM salas INNER JOIN sedes ON salas.id_sede = sedes.id WHERE salas.id_sede = ?', [id])
-        if (salas.length > 0) {
-            return res.json(salas[0])
-        }
-        res.status(404).json({text: 'The sala does not exists'})
+        const salas = await pool.query('SELECT salas.id, salas.id_sede, salas.tipo_sala, salas.tecnologia, sedes.nombre_fiscal, salas.numero_sala FROM salas INNER JOIN sedes ON salas.id_sede = sedes.id WHERE salas.id_sede = ?', [id])
+        res.json(salas);
     }
 
     public async create (req: Request, res: Response): Promise<void> {

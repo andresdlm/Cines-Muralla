@@ -1,0 +1,17 @@
+<h1 class="display-4">Combos</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre del combo</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let combo of combos">
+            <th scope="row">{{combo.id}}</th>
+            <td>{{combo.nombre_combo}}</td>
+            <td><button class="btn btn-primary">Ver contenido</button></td>
+        </tr>
+    </tbody>
+</table>

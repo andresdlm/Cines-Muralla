@@ -29,6 +29,6 @@ export class PeliculasService {
   }
 
   updatePelicula(id: String, updatedPelicula: Pelicula): Observable<Pelicula> {
-    return this.http.put(`${this.API_URI}/movies/${id}`, updatedPelicula)
+    return this.http.put(`${this.API_URI}/movies/${id}`, updatedPelicula);
   }
 }

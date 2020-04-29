@@ -1,19 +1,15 @@
-<h1 class="display-4">Salas de {{salas.nombre_fiscal}}</h1>
+<h1 class="display-4">Salas</h1>
 <table class="table">
     <thead class="thead-dark">
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Nombre Fiscal</th>
-            <th scope="col">Ubicacion</th>
+            <th scope="col">Numero de Sala</th>
             <th scope="col">Tipo de Sala</th>
             <th scope="col">Tecnología</th>
-            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let sala of salas">
-            <th scope="row">{{sala.id}}</th>
-            <td>{{sala.nombre_fiscal}}</td>
+            <th scope="row">{{sala.numero_sala}}</th>
             <td>{{sala.tipo_sala}}</td>
             <td>{{sala.tecnologia}}</td>
         </tr>

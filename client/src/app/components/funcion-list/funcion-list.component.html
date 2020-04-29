@@ -1,0 +1,25 @@
+<h1 class="display-4">Funciones</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Pelicula</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Sede</th>
+            <th scope="col">Tecnología</th>
+            <th scope="col">Tipo Sala</th>
+            <th scope="col">Idioma</th>
+            <th scope="col">Subtitulos</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let funcion of funciones">
+            <td>{{funcion.nombre_pelicula}}</td>
+            <td>{{funcion.fecha_funcion}}</td>
+            <td>{{funcion.nombre_fiscal}}</td>
+            <td>{{funcion.tecnologia}}</td>
+            <td>{{funcion.tipo_sala}}</td>
+            <td>{{funcion.idioma}}</td>
+            <td>{{funcion.subtitulos}}</td>
+        </tr>
+    </tbody>
+</table>

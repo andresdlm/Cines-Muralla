@@ -19,7 +19,7 @@ export class SedeListComponent implements OnInit {
         this.sedes = res;
       },
       err => console.log(err)
-    )
+    );
   }
 
 }

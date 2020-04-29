@@ -8,6 +8,7 @@
             <th scope="col">Duración</th>
             <th scope="col">Estreno</th>
             <th scope="col">Descripción</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -18,5 +19,6 @@
             <td>{{pelicula.duracion}} min</td>
             <td>{{pelicula.fecha_estreno | date: 'shortDate'}}</td>
             <td>{{pelicula.descripcion | slice:0:50}}...</td>
+            <td><button class="btn btn-primary">Ver Idiomas</button></td>
     </tbody>
 </table>

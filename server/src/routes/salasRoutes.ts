@@ -11,8 +11,7 @@ class SalasRoutes {
 
     config(): void {
         this.router.get('/', salaController.list);
-        this.router.get('/:id', salaController.getOne);
-        this.router.get('/sede/:id', salaController.getBySede);
+        this.router.get('/:id', salaController.getBySede);
         this.router.post('/', salaController.create)
         this.router.put('/:id', salaController.update);
         this.router.delete('/:id', salaController.delete);
